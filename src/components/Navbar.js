@@ -1,8 +1,8 @@
+// import { useState } from "react";
 import { useHistory, Link } from "react-router-dom";
 
 const Navbar = ({ searchText, setSearchText }) => {
   const history = useHistory()
-
   const updateSearchText = (e) => {
     history.push('/search')
     setSearchText(e.target.value)
@@ -57,7 +57,10 @@ const Navbar = ({ searchText, setSearchText }) => {
               value={searchText}
               onChange={updateSearchText}
             />
-            <button className="btn btn-outline-success" type="submit">
+            <button className="btn btn-outline-success" onClick={(e)=>{
+              e.preventDefault();
+              setSearchText=" "
+            }}>
               Search
             </button>
           </form>
