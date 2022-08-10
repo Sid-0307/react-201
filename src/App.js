@@ -6,6 +6,7 @@ import AboutView from "./components/AboutView";
 import SearchView from './components/SearchView';
 import MovieView from './components/MovieView';
 import { Switch, Route } from "react-router-dom";
+import ErrorView from "./components/ErrorView";
 
 function App() {
 
@@ -20,8 +21,8 @@ function App() {
           setSearchResults(data.results)
         })
     }
-  }, [searchText])
-
+  }, [searchText]
+  )
 
   return (
     <div>
@@ -35,6 +36,7 @@ function App() {
           <SearchView keyword={searchText} searchResults={searchResults} />
         </Route>
         <Route path="/movies/:id" component={MovieView} />
+        <Route path="*" component={ErrorView} />
       </Switch>
     </div>
   );
