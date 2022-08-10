@@ -34,7 +34,7 @@ const MovieView = () => {
               <div className="col-md-3">
                 <img
                   src={posterPath}
-                  alt="..."
+                  alt={movieDetails.original_title
                   className="img-fluid shadow rounded"
                 />
               </div>
